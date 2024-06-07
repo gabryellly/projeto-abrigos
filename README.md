@@ -64,8 +64,37 @@ function Listar() {
 for (let Abrigo of Abrigos)
      mensagem+= '\n $(Abrigo.Nome)  $(Abrigo.Endereço)  $(Abrigo.Cidade) $(Abrigo.Telefone) $(AbrigoCapacidade)'
     }
-    alert(mensagem);
+        alert(mensagem);
     }
 }
 
-function buscarAbrigo() 
+function buscarAbrigo() {
+if (Abrigos.length === 0) {
+       alert("Ainda não Existem Abrigos Cadrastrados na sua Cidade");
+    }else{
+          const LocalizarAbrigo = prompt("Digite sua Cidade") .toLocaleLowerCase();
+          let mensagem =
+
+                ------------------------
+                   LISTAGEM DE ABRIGOS:
+                ------------------------
+       
+|  NOME   |   ENDEREÇO  |   TELEFONE   |  CAPACIDADE  |  CIDADE  |
+------------------------------------------------------------------- 
+      
+-------------------------------------------------------------------;
+for (let Abrigo of Abrigos) {
+    if (Abrigo.Cidade.Includes(LocalizarAbrigo))
+       {
+        mensagem += "\n" + Abrigo.Nome + " " + Abrigo.Endereço + " " + Abrigo.Cidade + " " + Abrigo.Telefone + " " + AbrigoCapacidade
+    }
+ }
+ alert(mensagem);
+ }
+ )+/
+   /// finais
+
+//variaveis
+
+let Menu;
+const DoadoresDeSangue
