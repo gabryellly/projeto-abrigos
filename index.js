@@ -98,3 +98,84 @@ for (let Abrigo of Abrigos) {
 
 let Menu;
 const DoadoresDeSangue
+white (menu !== 5) {
+    menu = Number(
+        prompt(`===== SISTEMA DE CADASTRO DE DOADORES DE SANGUE =====
+        1. Cadastrar doador
+        2. Listar doadores
+        3. Buscar doador por tipo sanguíneo
+        4. Buscar doador por data da última doação
+        5. Sair
+        Escolha uma opção:
+        `)
+    );
+    switch (menu) {
+      case 1:
+        Cadrastrar();
+        break;
+      case 2:
+        Listar();
+        break;
+      case 3:
+        BuscarDoadorTipoSanguineo();
+        break;
+      case 4:
+        BuscarDadosData();
+        break;
+      case 5:
+        alert("Cadrastro feito com sucesso, volte sempre!")
+        break;
+    default:
+
+        alert("Opção Não Encontrada, Tente Novamente")
+        break;
+
+  }
+} 
+//Cadrastro do doador
+function Cadastrar() {
+  const Nome = prompt("Digite seu nome")
+  const Idade = Number(prompt("Digite sua Idade"));
+  const Peso = Number(prompt("Digite seu Peso"));
+  const TipoSangue = prompt("Digite seu Tipo Sanguineo").toLocaleLowerCase
+  const UltimaData = prompt("Digite a ultima data de Doação DD/MM/AAAA");
+  Let varTeste = 0
+  
+  const Doador = {
+    Nome,
+    Idade,
+    Peso,
+    TipoSangue,
+    UltimaData,
+  };
+
+  DoadoresDeSangue.push(Doador);
+  alert("Doador Cadrastrado com sucesso");
+}
+
+//lista de doadores
+function Listar() {
+    if (DoadoresDeSangue.length === 0) {
+        alert("Não Existe Doadores Cadrastrados");
+      } else {
+        let mensagem = '
+
+                      -----------------------
+                       LISTAGEM DE DOADORES:
+                      -----------------------
+   ----------------------------------------------------------------------                   
+   |  NOME  |  IDADE  |   PESO   |  TIPO SANGUÍNEO   |   ÚLTIMA DOAÇÃO  |
+   |                                                                    |
+   |                                                                    |
+   |                                                                    |
+    --------------------------------------------------------------------
+        `;  
+
+    for (let Doador of DoadoresSangue) {
+      if (Doador.UltimaData === DataBusca) {
+        mensagem += '\n      ${Doador.Nome} ||  ${Doador.Idade} ||  ${Doador.Peso} || ${Doador.TipoSangue} ||  ${Doador.UltimaData}';
+       }
+     }
+    alert(mensagem);
+  }  
+}
